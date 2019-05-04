@@ -1,0 +1,22 @@
+{
+  "name": "videojsPano_iframe",
+  "version": "0.0.1",
+  "description": "An attempt to load and control remote media content on an HTML canvas using an iframe and webcontents",
+  "main": "main.js",
+  "repository": "https://zhwatts@github.com/zhwatts/videojsPano_iframe.git",
+  "author": "zhwatts",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "wepback": ". webpack"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "video.js": "^7.5.4",
+    "videojs-panorama": "^0.1.7",
+    "webpack": "^4.30.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.1"
+  }
+}

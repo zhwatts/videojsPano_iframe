@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="background: #509ace;">
+
+    <div id="time">asdf</div>
+
+    <script src="./webpacked/vendorScripts.js"></script>
+
+    <script>
+
+
+      window.addEventListener('message',function(event) {
+      	// if(event.origin !== 'http://localhost:8080') return;
+
+        $('#time').html(`new time: ${event.data}`);
+
+      	// console.log('message received:  ' + event.data,event);
+
+      	event.source.postMessage('message received',event.origin);
+      },false);
+    </script>
+
+  </body>
+</html>

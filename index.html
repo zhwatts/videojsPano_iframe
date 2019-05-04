@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+    #iframe-container{
+      background: #333;
+      width: 100%;
+      height: 390px;
+    }
+
+    iframe{
+      display: block;
+      width: 575px;
+      height: 100%;
+
+      border: 0;
+      padding :0;
+      margin: 0 auto;
+    }
+
+  </style>
+
+  <body>
+      <div id="iframe-container">
+        <iframe id="mainFrame" src="./iframe.html"></iframe>
+      </div>
+
+      <button>Test</button>
+
+
+      <script src="./webpacked/vendorScripts.js"></script>
+
+      <script>
+
+
+        //create popup window
+        var domain = 'http://localhost:8080/';
+        var iframe = document.getElementById('mainFrame').contentWindow;
+
+        //periodical message sender
+        setInterval(function(){
+        	var message = new Date().getTime();
+
+        	iframe.postMessage(message,domain); //send the message and target URI
+        },1000);
+
+
+        window.addEventListener('message',function(event) {
+          // if(event.origin !== 'http://localhost:8080') return;
+
+          console.log(event.data);
+        },false);
+
+      </script>
+
+  </body>
+</html>
